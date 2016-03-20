@@ -35,7 +35,8 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 1. 
 2. 
-
+## Data Schema
+<img src='http://i.imgur.com/zSSGPum.jpg' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
