@@ -6,8 +6,8 @@ Time spent: **X** hours spent in total
 
 The following **required** functionality is complete:
 
-- [ ] Sign in flow
-- [ ] TableView and MapView implementation for clubs
+- [X] Sign in flow
+- [X] TableView and MapView implementation for clubs
 - [ ] News feed composed of user's subscribed club updates
 - [ ] User can reply YES, NO, or MAYBE to a club event
 - [ ] User can view the list of attendees
@@ -40,6 +40,13 @@ Please list two areas of the assignment you'd like to **discuss further with you
 ## Data Schema
 
 <img src='http://i.imgur.com/zSSGPum.jpg' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+
+
+##Wireframes
+
+<img src='http://i.imgur.com/n8ylYac.jpg' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
 
 ## Video Walkthrough 
 

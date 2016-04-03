@@ -20,13 +20,25 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     @IBOutlet weak var mapView: MKMapView!
     
     var clubEventPosts: [PFObject]!
+    var locationManager: CLLocationManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let centerLocation = CLLocation(latitude: 37.7833, longitude: -122.4167)
-        goToLocation(centerLocation)
+
+        
+        //let centerLocation = CLLocation(latitude: 37.7833, longitude: -122.4167)
+        //goToLocation(centerLocation)
+        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.distanceFilter = 200
+        
+        locationManager.requestAlwaysAuthorization()
+        
+        mapView.delegate = self
     }
     
     func goToLocation(location: CLLocation) {
@@ -64,10 +76,31 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         case 1:
             mapView.hidden = false
             feedView.hidden = true
+            locationManager.requestWhenInUseAuthorization()
+
         default:
             break;
         }
     
+    }
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        
+        locationManager.requestAlwaysAuthorization()
+
+        if status == CLAuthorizationStatus.AuthorizedWhenInUse {
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        locationManager.requestAlwaysAuthorization()
+
+        
+        if let location = locations.first {
+            let span = MKCoordinateSpanMake(0.1, 0.1)
+            let region = MKCoordinateRegionMake(location.coordinate, span)
+            mapView.setRegion(region, animated: false)
+        }
     }
 
     /*
