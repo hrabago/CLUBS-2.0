@@ -9,6 +9,7 @@ target 'Clubs' do
 	pod 'Parse'
 	pod "BDBOAuth1Manager"
     pod 'MBProgressHUD'
+    pod 'ParseUI'
 
 end
 

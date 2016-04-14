@@ -12,6 +12,10 @@
 		C42226D71C9E4CB800E7C13A /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42226D61C9E4CB800E7C13A /* EventsViewController.swift */; };
 		C42226D91C9E4CDD00E7C13A /* MyClubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42226D81C9E4CDD00E7C13A /* MyClubsViewController.swift */; };
 		C42226DB1C9E5B9600E7C13A /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42226DA1C9E5B9500E7C13A /* EventTableViewCell.swift */; };
+		C4317C521CBDC4F5003C8DDD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4317C511CBDC4F5003C8DDD /* ProfileViewController.swift */; };
+		C4317C551CBDC56B003C8DDD /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4317C541CBDC56B003C8DDD /* ProfileTableViewCell.swift */; };
+		C4317C571CBDCE6A003C8DDD /* ProfileTableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4317C561CBDCE6A003C8DDD /* ProfileTableViewCell2.swift */; };
+		C48EA5B51CBB65E4000EB8B3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48EA5B41CBB65E4000EB8B3 /* SignUpViewController.swift */; };
 		C4CF65661C8A3865003DAF38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CF65651C8A3865003DAF38 /* AppDelegate.swift */; };
 		C4CF65681C8A3865003DAF38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CF65671C8A3865003DAF38 /* ViewController.swift */; };
 		C4CF656B1C8A3865003DAF38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4CF65691C8A3865003DAF38 /* Main.storyboard */; };
@@ -27,6 +31,10 @@
 		C42226D61C9E4CB800E7C13A /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		C42226D81C9E4CDD00E7C13A /* MyClubsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyClubsViewController.swift; sourceTree = "<group>"; };
 		C42226DA1C9E5B9500E7C13A /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		C4317C511CBDC4F5003C8DDD /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C4317C541CBDC56B003C8DDD /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		C4317C561CBDCE6A003C8DDD /* ProfileTableViewCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell2.swift; sourceTree = "<group>"; };
+		C48EA5B41CBB65E4000EB8B3 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C4CF65621C8A3865003DAF38 /* Clubs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clubs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CF65651C8A3865003DAF38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4CF65671C8A3865003DAF38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,8 +82,20 @@
 				C40479621C9B93CB006393DF /* LogInViewController.swift */,
 				C42226D61C9E4CB800E7C13A /* EventsViewController.swift */,
 				C42226D81C9E4CDD00E7C13A /* MyClubsViewController.swift */,
+				C48EA5B41CBB65E4000EB8B3 /* SignUpViewController.swift */,
+				C4317C511CBDC4F5003C8DDD /* ProfileViewController.swift */,
 			);
 			name = "view Controllers";
+			sourceTree = "<group>";
+		};
+		C4317C531CBDC534003C8DDD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C42226DA1C9E5B9500E7C13A /* EventTableViewCell.swift */,
+				C4317C541CBDC56B003C8DDD /* ProfileTableViewCell.swift */,
+				C4317C561CBDCE6A003C8DDD /* ProfileTableViewCell2.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		C4CF65591C8A3864003DAF38 = {
@@ -100,9 +120,9 @@
 			isa = PBXGroup;
 			children = (
 				C4CF65651C8A3865003DAF38 /* AppDelegate.swift */,
+				C4317C531CBDC534003C8DDD /* Cells */,
 				C42226D51C9E4C8900E7C13A /* view Controllers */,
 				C4CF65691C8A3865003DAF38 /* Main.storyboard */,
-				C42226DA1C9E5B9500E7C13A /* EventTableViewCell.swift */,
 				C4CF656C1C8A3865003DAF38 /* Assets.xcassets */,
 				C4E2B5B91C9B4118004B996B /* club.png */,
 				C4CF656E1C8A3865003DAF38 /* LaunchScreen.storyboard */,
@@ -235,10 +255,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C42226DB1C9E5B9600E7C13A /* EventTableViewCell.swift in Sources */,
+				C48EA5B51CBB65E4000EB8B3 /* SignUpViewController.swift in Sources */,
 				C4CF65681C8A3865003DAF38 /* ViewController.swift in Sources */,
+				C4317C551CBDC56B003C8DDD /* ProfileTableViewCell.swift in Sources */,
 				C42226D71C9E4CB800E7C13A /* EventsViewController.swift in Sources */,
 				C4CF65661C8A3865003DAF38 /* AppDelegate.swift in Sources */,
 				C40479631C9B93CB006393DF /* LogInViewController.swift in Sources */,
+				C4317C521CBDC4F5003C8DDD /* ProfileViewController.swift in Sources */,
+				C4317C571CBDCE6A003C8DDD /* ProfileTableViewCell2.swift in Sources */,
 				C42226D91C9E4CDD00E7C13A /* MyClubsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,7 +374,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E08769BB27ACDCB609BD7905 /* Pods-Clubs.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				INFOPLIST_FILE = Clubs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HR.Clubs;
@@ -362,7 +386,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C2B9B69B1D02B17192ABF8F8 /* Pods-Clubs.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				INFOPLIST_FILE = Clubs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HR.Clubs;

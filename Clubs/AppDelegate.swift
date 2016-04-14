@@ -13,6 +13,8 @@ import Parse
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -25,6 +27,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             }))
         
+        if let currentUser = PFUser.currentUser() {
+            print("Logged in user detected: \(currentUser.username!)")
+            
+            let vc = storyboard.instantiateViewControllerWithIdentifier("tabBarController") as UIViewController
+            window?.rootViewController = vc
+            
+        } else {
+            // Let storyboard dictate initial view controller
+            print("No logged in user detected")
+        }
+        
+
+        
+        UITabBar.appearance().tintColor = UIColor(red: 0.36, green: 0.215, blue: 0.6, alpha: 1.0)
+
         return true
     }
 

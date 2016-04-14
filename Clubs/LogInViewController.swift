@@ -8,9 +8,12 @@
 
 import UIKit
 import JavaScriptCore
+import Parse
 
 
 class LogInViewController: UIViewController {
+    
+    @IBOutlet weak var userField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var pwField: UITextField!
     @IBOutlet weak var buttonBottomConstraint: NSLayoutConstraint!
@@ -69,7 +72,20 @@ class LogInViewController: UIViewController {
     
     @IBAction func pressedLogIn(sender: AnyObject) {
     
-        self.performSegueWithIdentifier("loginSuccessful", sender: nil)
+        
+        PFUser.logInWithUsernameInBackground(userField.text!, password: pwField.text!) { (user: PFUser?, error: NSError?) -> Void in
+            
+            if user != nil{
+                
+                print("Login Worked!")
+                
+                self.performSegueWithIdentifier("loginSuccessful", sender: nil)
+            }
+            else{
+                print("Login Failed")
+                
+            }
+        }
         
     }
     
