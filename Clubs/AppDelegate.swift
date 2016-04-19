@@ -9,6 +9,9 @@
 import UIKit
 import Parse
 
+
+let userDidLogoutNotification = "userDidLogoutNotification"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -27,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             }))
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userDidLogout", name: userDidLogoutNotification, object: nil)
+
         if let currentUser = PFUser.currentUser() {
             print("Logged in user detected: \(currentUser.username!)")
             
@@ -43,6 +48,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = UIColor(red: 0.36, green: 0.215, blue: 0.6, alpha: 1.0)
 
         return true
+    }
+    func userDidLogout() {
+        // Go back to storyboard's initial view controller
+        
+        print("User logged out")
+        let vc = storyboard.instantiateInitialViewController()! as UIViewController
+        window?.rootViewController = vc
     }
 
     func applicationWillResignActive(application: UIApplication) {

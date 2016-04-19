@@ -11,6 +11,11 @@ import Parse
 
 
 class EventTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var eventHostClub: UILabel!
+    @IBOutlet weak var eventTitle: UILabel!
+    @IBOutlet weak var eventDate: UILabel!
+    @IBOutlet weak var eventImage: UIImageView!
 
     var clubEventPost: PFObject!
     

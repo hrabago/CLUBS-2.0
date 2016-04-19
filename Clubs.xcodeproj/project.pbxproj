@@ -9,18 +9,21 @@
 /* Begin PBXBuildFile section */
 		2A9BE75A0FCB7C3EA2CF6BC9 /* Pods_Clubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE92C5D90B9729BFF8E4466 /* Pods_Clubs.framework */; };
 		C40479631C9B93CB006393DF /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40479621C9B93CB006393DF /* LogInViewController.swift */; };
+		C41690E01CC189C7000A8A23 /* DetailedEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41690DF1CC189C7000A8A23 /* DetailedEventViewController.swift */; };
+		C41690E31CC1A9BD000A8A23 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41690E21CC1A9BD000A8A23 /* User.swift */; };
+		C41690E51CC1AF71000A8A23 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41690E41CC1AF71000A8A23 /* Event.swift */; };
 		C42226D71C9E4CB800E7C13A /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42226D61C9E4CB800E7C13A /* EventsViewController.swift */; };
 		C42226D91C9E4CDD00E7C13A /* MyClubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42226D81C9E4CDD00E7C13A /* MyClubsViewController.swift */; };
 		C42226DB1C9E5B9600E7C13A /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42226DA1C9E5B9500E7C13A /* EventTableViewCell.swift */; };
 		C4317C521CBDC4F5003C8DDD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4317C511CBDC4F5003C8DDD /* ProfileViewController.swift */; };
-		C4317C551CBDC56B003C8DDD /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4317C541CBDC56B003C8DDD /* ProfileTableViewCell.swift */; };
-		C4317C571CBDCE6A003C8DDD /* ProfileTableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4317C561CBDCE6A003C8DDD /* ProfileTableViewCell2.swift */; };
 		C48EA5B51CBB65E4000EB8B3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48EA5B41CBB65E4000EB8B3 /* SignUpViewController.swift */; };
 		C4CF65661C8A3865003DAF38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CF65651C8A3865003DAF38 /* AppDelegate.swift */; };
 		C4CF65681C8A3865003DAF38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CF65671C8A3865003DAF38 /* ViewController.swift */; };
 		C4CF656B1C8A3865003DAF38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4CF65691C8A3865003DAF38 /* Main.storyboard */; };
 		C4CF656D1C8A3865003DAF38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4CF656C1C8A3865003DAF38 /* Assets.xcassets */; };
 		C4CF65701C8A3865003DAF38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4CF656E1C8A3865003DAF38 /* LaunchScreen.storyboard */; };
+		C4D599F91CC0676F00D4A565 /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D599F81CC0676F00D4A565 /* ProfileHeaderCell.swift */; };
+		C4D599FB1CC0679100D4A565 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D599FA1CC0679100D4A565 /* ProfileCell.swift */; };
 		C4E2B5BA1C9B4118004B996B /* club.png in Resources */ = {isa = PBXBuildFile; fileRef = C4E2B5B91C9B4118004B996B /* club.png */; };
 /* End PBXBuildFile section */
 
@@ -28,12 +31,13 @@
 		2DE92C5D90B9729BFF8E4466 /* Pods_Clubs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clubs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B9B69B1D02B17192ABF8F8 /* Pods-Clubs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clubs.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clubs/Pods-Clubs.release.xcconfig"; sourceTree = "<group>"; };
 		C40479621C9B93CB006393DF /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		C41690DF1CC189C7000A8A23 /* DetailedEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedEventViewController.swift; sourceTree = "<group>"; };
+		C41690E21CC1A9BD000A8A23 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C41690E41CC1AF71000A8A23 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		C42226D61C9E4CB800E7C13A /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		C42226D81C9E4CDD00E7C13A /* MyClubsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyClubsViewController.swift; sourceTree = "<group>"; };
 		C42226DA1C9E5B9500E7C13A /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		C4317C511CBDC4F5003C8DDD /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		C4317C541CBDC56B003C8DDD /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
-		C4317C561CBDCE6A003C8DDD /* ProfileTableViewCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell2.swift; sourceTree = "<group>"; };
 		C48EA5B41CBB65E4000EB8B3 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C4CF65621C8A3865003DAF38 /* Clubs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clubs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CF65651C8A3865003DAF38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +46,8 @@
 		C4CF656C1C8A3865003DAF38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4CF656F1C8A3865003DAF38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4CF65711C8A3865003DAF38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4D599F81CC0676F00D4A565 /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCell.swift; sourceTree = "<group>"; };
+		C4D599FA1CC0679100D4A565 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		C4E2B5B91C9B4118004B996B /* club.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = club.png; path = Assets.xcassets/club.png; sourceTree = "<group>"; };
 		E08769BB27ACDCB609BD7905 /* Pods-Clubs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clubs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clubs/Pods-Clubs.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +81,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C41690E11CC1A928000A8A23 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C41690E21CC1A9BD000A8A23 /* User.swift */,
+				C41690E41CC1AF71000A8A23 /* Event.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		C42226D51C9E4C8900E7C13A /* view Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +99,7 @@
 				C42226D81C9E4CDD00E7C13A /* MyClubsViewController.swift */,
 				C48EA5B41CBB65E4000EB8B3 /* SignUpViewController.swift */,
 				C4317C511CBDC4F5003C8DDD /* ProfileViewController.swift */,
+				C41690DF1CC189C7000A8A23 /* DetailedEventViewController.swift */,
 			);
 			name = "view Controllers";
 			sourceTree = "<group>";
@@ -92,8 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				C42226DA1C9E5B9500E7C13A /* EventTableViewCell.swift */,
-				C4317C541CBDC56B003C8DDD /* ProfileTableViewCell.swift */,
-				C4317C561CBDCE6A003C8DDD /* ProfileTableViewCell2.swift */,
+				C4D599F81CC0676F00D4A565 /* ProfileHeaderCell.swift */,
+				C4D599FA1CC0679100D4A565 /* ProfileCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -119,6 +135,7 @@
 		C4CF65641C8A3865003DAF38 /* Clubs */ = {
 			isa = PBXGroup;
 			children = (
+				C41690E11CC1A928000A8A23 /* Models */,
 				C4CF65651C8A3865003DAF38 /* AppDelegate.swift */,
 				C4317C531CBDC534003C8DDD /* Cells */,
 				C42226D51C9E4C8900E7C13A /* view Controllers */,
@@ -257,13 +274,16 @@
 				C42226DB1C9E5B9600E7C13A /* EventTableViewCell.swift in Sources */,
 				C48EA5B51CBB65E4000EB8B3 /* SignUpViewController.swift in Sources */,
 				C4CF65681C8A3865003DAF38 /* ViewController.swift in Sources */,
-				C4317C551CBDC56B003C8DDD /* ProfileTableViewCell.swift in Sources */,
 				C42226D71C9E4CB800E7C13A /* EventsViewController.swift in Sources */,
 				C4CF65661C8A3865003DAF38 /* AppDelegate.swift in Sources */,
 				C40479631C9B93CB006393DF /* LogInViewController.swift in Sources */,
+				C4D599F91CC0676F00D4A565 /* ProfileHeaderCell.swift in Sources */,
+				C41690E01CC189C7000A8A23 /* DetailedEventViewController.swift in Sources */,
+				C41690E31CC1A9BD000A8A23 /* User.swift in Sources */,
 				C4317C521CBDC4F5003C8DDD /* ProfileViewController.swift in Sources */,
-				C4317C571CBDCE6A003C8DDD /* ProfileTableViewCell2.swift in Sources */,
 				C42226D91C9E4CDD00E7C13A /* MyClubsViewController.swift in Sources */,
+				C4D599FB1CC0679100D4A565 /* ProfileCell.swift in Sources */,
+				C41690E51CC1AF71000A8A23 /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,7 +394,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E08769BB27ACDCB609BD7905 /* Pods-Clubs.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-4";
 				INFOPLIST_FILE = Clubs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HR.Clubs;
@@ -386,7 +406,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C2B9B69B1D02B17192ABF8F8 /* Pods-Clubs.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-4";
 				INFOPLIST_FILE = Clubs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HR.Clubs;

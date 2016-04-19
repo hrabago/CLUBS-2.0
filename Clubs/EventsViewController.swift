@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 import Parse
+import ParseUI
 
 class EventsViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UIGestureRecognizerDelegate, UITableViewDelegate, UITableViewDataSource{
     
@@ -19,7 +20,9 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var mapView: MKMapView!
     
+    
     var clubEventPosts: [PFObject]!
+    
     var locationManager: CLLocationManager!
     
     override func viewDidLoad() {
@@ -39,6 +42,20 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         locationManager.requestAlwaysAuthorization()
         
         mapView.delegate = self
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.reloadData()
+        
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        
+        
+        if let row = tableView.indexPathForSelectedRow {
+            self.tableView.deselectRowAtIndexPath(row, animated: false)
+        }
+        
     }
     
     func goToLocation(location: CLLocation) {
@@ -53,16 +70,20 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
-        return self.clubEventPosts == nil ? 0 : self.clubEventPosts.count
+        //return self.clubEventPosts == nil ? 0 : self.clubEventPosts.count
+        return 20
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
         let cell = tableView.dequeueReusableCellWithIdentifier("EventCell") as! EventTableViewCell
-        cell.clubEventPost = clubEventPosts[indexPath.row]
+        //cell.clubEventPost = clubEventPosts[indexPath.row]
+        
+        
         return cell
 
     }
+
 
     
     @IBAction func indexChanged(sender: AnyObject) {

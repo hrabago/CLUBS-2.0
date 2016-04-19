@@ -1,15 +1,16 @@
 //
-//  ProfileTableViewCell2.swift
+//  ProfileHeaderCell.swift
 //  Clubs
 //
-//  Created by Héctor Rábago on 4/12/16.
+//  Created by Héctor Rábago on 4/14/16.
 //
 //
 
 import UIKit
 
-class ProfileTableViewCell2: UITableViewCell {
+class ProfileHeaderCell: UITableViewCell {
 
+    @IBOutlet weak var nameLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

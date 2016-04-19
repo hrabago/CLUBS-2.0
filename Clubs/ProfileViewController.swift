@@ -7,14 +7,26 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 
 class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.reloadData()
+        
+        //tableView.sectionFooterHeight = 0.0
         // Do any additional setup after loading the view.
+        
+        //tableView.rowHeight = UITableViewAutomaticDimension
+        //tableView.estimatedRowHeight = 120
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,19 +34,77 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
         
-        return 5
+        
+        if let row = tableView.indexPathForSelectedRow {
+            self.tableView.deselectRowAtIndexPath(row, animated: false)
+        }
         
     }
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        
+        return 10
+        
+        
+    }
+    
+    
+    //HEADER
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?{
+        
+        let header = tableView.dequeueReusableCellWithIdentifier("HeaderCell") as! ProfileHeaderCell
+        
+        header.nameLabel.text = "José Plumitallo"
+        
+        return header.contentView
+    }
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat{
+        
+        return 200.0
+    }
+    //FOOTER
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat{
+        
+        return CGFloat.min
+
+    }
+    
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
      
-        let cell = tableView.dequeueReusableCellWithIdentifier("ProfileTableViewCell", forIndexPath: indexPath) as! ProfileTableViewCell
+        
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("ProfileCell", forIndexPath: indexPath) as!
+        ProfileCell
+        
         
         return cell
     }
     
+    @IBAction func onLogOut(sender: AnyObject) {
+        
+        PFUser.logOutInBackgroundWithBlock { (error: NSError?) -> Void in
+            if let error = error {
+                print("Error while trying to logout: \(error)")
+            } else {
+                
+                print("Log out Worked")
+                NSNotificationCenter.defaultCenter().postNotificationName(userDidLogoutNotification, object: nil)
+                //self.performSegueWithIdentifier("onLogoutSegue", sender: nil)
+                
+                
+            }
+        }
+    }
 }
     
 
