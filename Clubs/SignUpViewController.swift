@@ -33,6 +33,8 @@ class SignUpViewController: UIViewController {
         
         newUser.password = newPwField.text
         
+        newUser.email = newEmailField.text
+        
         newUser.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if success {
                 

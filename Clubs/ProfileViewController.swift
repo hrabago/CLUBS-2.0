@@ -63,7 +63,7 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
         
         let header = tableView.dequeueReusableCellWithIdentifier("HeaderCell") as! ProfileHeaderCell
         
-        header.nameLabel.text = "José Plumitallo"
+        header.nameLabel.text = "user"
         
         return header.contentView
     }
