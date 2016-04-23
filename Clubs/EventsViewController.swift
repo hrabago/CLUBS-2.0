@@ -22,7 +22,8 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     
     var clubEventPosts: [PFObject]!
-    
+    var location: NSDictionary!
+
     var locationManager: CLLocationManager!
     
     override func viewDidLoad() {
@@ -36,12 +37,33 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         
         locationManager = CLLocationManager()
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        locationManager.distanceFilter = 200
         
-        locationManager.requestAlwaysAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            //locationManager.startUpdatingLocation()
+        }
         
         mapView.delegate = self
+        mapView.showsUserLocation = true
+        
+        self.addAnnotationAtCoordinate(CLLocationCoordinate2D(latitude: 40.86144831,longitude: -73.8861157))
+        
+        let request = MKDirectionsRequest()
+        request.source = MKMapItem.mapItemForCurrentLocation()
+        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 40.86144831, longitude: -73.8861157), addressDictionary: nil))
+        request.requestsAlternateRoutes = true
+        request.transportType = .Walking
+        
+        let directions = MKDirections(request: request)
+        
+        directions.calculateDirectionsWithCompletionHandler { [unowned self] response, error in
+            guard let unwrappedResponse = response else { return }
+            
+            for route in unwrappedResponse.routes {
+                self.mapView.addOverlay(route.polyline)
+                self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+            }
+        }
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -51,18 +73,51 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
         
         if let row = tableView.indexPathForSelectedRow {
             self.tableView.deselectRowAtIndexPath(row, animated: false)
         }
         
     }
-    
+    /*
     func goToLocation(location: CLLocation) {
         let span = MKCoordinateSpanMake(0.1, 0.1)
         let region = MKCoordinateRegionMake(location.coordinate, span)
         mapView.setRegion(region, animated: false)
+    }*/
+    
+    func goToLocation(location: CLLocation) {
+        
+        let latDelta = CLLocationDegrees(1.1)
+        let lonDelta = CLLocationDegrees(1.1)
+        let span = MKCoordinateSpanMake(latDelta, lonDelta)
+        let region = MKCoordinateRegionMake(location.coordinate, span)
+        mapView.setRegion(region, animated: true)
+        
+        // Need to set a delay before the next function plays
     }
+    
+    func zoomOnLocation(location: CLLocation) {
+        let latDelta = CLLocationDegrees(0.01)
+        let lonDelta = CLLocationDegrees(0.01)
+        let span = MKCoordinateSpanMake(latDelta, lonDelta)
+        let region = MKCoordinateRegionMake(location.coordinate, span)
+        mapView.setRegion(region, animated: true)
+    }
+    
+    func addAnnotationAtCoordinate(coordinate: CLLocationCoordinate2D) {
+        //let view = location["location"] as! [String: AnyObject]
+        //let locName = view["name"] as! String
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = coordinate
+        annotation.title = "Dealy Hall"
+        mapView.addAnnotation(annotation)
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -97,7 +152,6 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         case 1:
             mapView.hidden = false
             feedView.hidden = true
-            locationManager.requestWhenInUseAuthorization()
 
         default:
             break;
@@ -106,24 +160,27 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         
-        locationManager.requestAlwaysAuthorization()
 
-        if status == CLAuthorizationStatus.AuthorizedWhenInUse {
+        if status == CLAuthorizationStatus.AuthorizedWhenInUse || status == .AuthorizedAlways {
             locationManager.startUpdatingLocation()
         }
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        locationManager.requestAlwaysAuthorization()
+    /*func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 
         
         if let location = locations.first {
-            let span = MKCoordinateSpanMake(0.1, 0.1)
+            let span = MKCoordinateSpanMake(0.01, 0.01)
             let region = MKCoordinateRegionMake(location.coordinate, span)
             mapView.setRegion(region, animated: false)
         }
-    }
+    }*/
 
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(polyline: overlay as! MKPolyline)
+        renderer.strokeColor = UIColor.blueColor()
+        return renderer
+    }
     /*
     // MARK: - Navigation
 

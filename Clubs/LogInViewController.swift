@@ -26,6 +26,9 @@ class LogInViewController: UIViewController {
         // Do any additional setup after loading the view.
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         buttonBottomConstraint.constant = 0.0
+        
+        self.hideKeyboardWhenTappedAround()
+
     
     }
 

@@ -11,6 +11,7 @@ import Parse
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var newEmailField: UITextField!
     @IBOutlet weak var newUserField: UITextField!
     @IBOutlet weak var newPwField: UITextField!
     override func viewDidLoad() {

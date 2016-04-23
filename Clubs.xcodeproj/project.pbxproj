@@ -12,6 +12,11 @@
 		C41690E01CC189C7000A8A23 /* DetailedEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41690DF1CC189C7000A8A23 /* DetailedEventViewController.swift */; };
 		C41690E31CC1A9BD000A8A23 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41690E21CC1A9BD000A8A23 /* User.swift */; };
 		C41690E51CC1AF71000A8A23 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41690E41CC1AF71000A8A23 /* Event.swift */; };
+		C4209EBD1CC99D7A00827822 /* ClubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4209EBC1CC99D7A00827822 /* ClubTableViewCell.swift */; };
+		C4209EBF1CC9A7EF00827822 /* ClubDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4209EBE1CC9A7EF00827822 /* ClubDetailedViewController.swift */; };
+		C4209EC11CC9AB3700827822 /* ClubEventsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4209EC01CC9AB3700827822 /* ClubEventsCell.swift */; };
+		C4209EC31CC9AB4F00827822 /* ClubHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4209EC21CC9AB4F00827822 /* ClubHeaderCell.swift */; };
+		C4209EC51CCAADA000827822 /* launchScreen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C4209EC41CCAADA000827822 /* launchScreen.jpg */; };
 		C42226D71C9E4CB800E7C13A /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42226D61C9E4CB800E7C13A /* EventsViewController.swift */; };
 		C42226D91C9E4CDD00E7C13A /* MyClubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42226D81C9E4CDD00E7C13A /* MyClubsViewController.swift */; };
 		C42226DB1C9E5B9600E7C13A /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42226DA1C9E5B9500E7C13A /* EventTableViewCell.swift */; };
@@ -34,6 +39,11 @@
 		C41690DF1CC189C7000A8A23 /* DetailedEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedEventViewController.swift; sourceTree = "<group>"; };
 		C41690E21CC1A9BD000A8A23 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C41690E41CC1AF71000A8A23 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		C4209EBC1CC99D7A00827822 /* ClubTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubTableViewCell.swift; sourceTree = "<group>"; };
+		C4209EBE1CC9A7EF00827822 /* ClubDetailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubDetailedViewController.swift; sourceTree = "<group>"; };
+		C4209EC01CC9AB3700827822 /* ClubEventsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubEventsCell.swift; sourceTree = "<group>"; };
+		C4209EC21CC9AB4F00827822 /* ClubHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubHeaderCell.swift; sourceTree = "<group>"; };
+		C4209EC41CCAADA000827822 /* launchScreen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = launchScreen.jpg; path = Assets.xcassets/launchScreen.jpg; sourceTree = "<group>"; };
 		C42226D61C9E4CB800E7C13A /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		C42226D81C9E4CDD00E7C13A /* MyClubsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyClubsViewController.swift; sourceTree = "<group>"; };
 		C42226DA1C9E5B9500E7C13A /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
@@ -100,6 +110,7 @@
 				C48EA5B41CBB65E4000EB8B3 /* SignUpViewController.swift */,
 				C4317C511CBDC4F5003C8DDD /* ProfileViewController.swift */,
 				C41690DF1CC189C7000A8A23 /* DetailedEventViewController.swift */,
+				C4209EBE1CC9A7EF00827822 /* ClubDetailedViewController.swift */,
 			);
 			name = "view Controllers";
 			sourceTree = "<group>";
@@ -108,8 +119,11 @@
 			isa = PBXGroup;
 			children = (
 				C42226DA1C9E5B9500E7C13A /* EventTableViewCell.swift */,
+				C4209EBC1CC99D7A00827822 /* ClubTableViewCell.swift */,
 				C4D599F81CC0676F00D4A565 /* ProfileHeaderCell.swift */,
+				C4209EC01CC9AB3700827822 /* ClubEventsCell.swift */,
 				C4D599FA1CC0679100D4A565 /* ProfileCell.swift */,
+				C4209EC21CC9AB4F00827822 /* ClubHeaderCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -141,6 +155,7 @@
 				C42226D51C9E4C8900E7C13A /* view Controllers */,
 				C4CF65691C8A3865003DAF38 /* Main.storyboard */,
 				C4CF656C1C8A3865003DAF38 /* Assets.xcassets */,
+				C4209EC41CCAADA000827822 /* launchScreen.jpg */,
 				C4E2B5B91C9B4118004B996B /* club.png */,
 				C4CF656E1C8A3865003DAF38 /* LaunchScreen.storyboard */,
 				C4CF65711C8A3865003DAF38 /* Info.plist */,
@@ -211,6 +226,7 @@
 			files = (
 				C4CF65701C8A3865003DAF38 /* LaunchScreen.storyboard in Resources */,
 				C4E2B5BA1C9B4118004B996B /* club.png in Resources */,
+				C4209EC51CCAADA000827822 /* launchScreen.jpg in Resources */,
 				C4CF656D1C8A3865003DAF38 /* Assets.xcassets in Resources */,
 				C4CF656B1C8A3865003DAF38 /* Main.storyboard in Resources */,
 			);
@@ -271,7 +287,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4209EBF1CC9A7EF00827822 /* ClubDetailedViewController.swift in Sources */,
 				C42226DB1C9E5B9600E7C13A /* EventTableViewCell.swift in Sources */,
+				C4209EBD1CC99D7A00827822 /* ClubTableViewCell.swift in Sources */,
 				C48EA5B51CBB65E4000EB8B3 /* SignUpViewController.swift in Sources */,
 				C4CF65681C8A3865003DAF38 /* ViewController.swift in Sources */,
 				C42226D71C9E4CB800E7C13A /* EventsViewController.swift in Sources */,
@@ -279,6 +297,8 @@
 				C40479631C9B93CB006393DF /* LogInViewController.swift in Sources */,
 				C4D599F91CC0676F00D4A565 /* ProfileHeaderCell.swift in Sources */,
 				C41690E01CC189C7000A8A23 /* DetailedEventViewController.swift in Sources */,
+				C4209EC11CC9AB3700827822 /* ClubEventsCell.swift in Sources */,
+				C4209EC31CC9AB4F00827822 /* ClubHeaderCell.swift in Sources */,
 				C41690E31CC1A9BD000A8A23 /* User.swift in Sources */,
 				C4317C521CBDC4F5003C8DDD /* ProfileViewController.swift in Sources */,
 				C42226D91C9E4CDD00E7C13A /* MyClubsViewController.swift in Sources */,
