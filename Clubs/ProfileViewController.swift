@@ -14,6 +14,8 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
 
     @IBOutlet weak var tableView: UITableView!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,12 +23,16 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
         tableView.delegate = self
         tableView.reloadData()
         
+        
         //tableView.sectionFooterHeight = 0.0
         // Do any additional setup after loading the view.
         
         //tableView.rowHeight = UITableViewAutomaticDimension
         //tableView.estimatedRowHeight = 120
         
+        
+        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,9 +44,13 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
         super.viewWillAppear(true)
         
         
+        
+        
         if let row = tableView.indexPathForSelectedRow {
             self.tableView.deselectRowAtIndexPath(row, animated: false)
         }
+        
+        
         
     }
     
@@ -63,7 +73,29 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
         
         let header = tableView.dequeueReusableCellWithIdentifier("HeaderCell") as! ProfileHeaderCell
         
-        header.nameLabel.text = "user"
+        PFUser.currentUser()!.fetchInBackgroundWithBlock({ (currentUser: PFObject?, error: NSError?) -> Void in
+            
+            // Update your data
+            
+            if let user = currentUser as? PFUser {
+                
+                let email = user.email
+                let name = user.username
+                let password = user.password
+                
+                let fullName = "\(user["FirstName"]) \(user["LastName"])"
+                
+                
+                header.nameLabel.text = fullName
+                
+                print("header label \(fullName)")
+                
+            }
+        })
+        
+
+
+
         
         return header.contentView
     }

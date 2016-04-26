@@ -14,6 +14,12 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var newEmailField: UITextField!
     @IBOutlet weak var newUserField: UITextField!
     @IBOutlet weak var newPwField: UITextField!
+    @IBOutlet weak var userFirstNameField: UITextField!
+    @IBOutlet weak var userLastNameField: UITextField!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +40,13 @@ class SignUpViewController: UIViewController {
         newUser.password = newPwField.text
         
         newUser.email = newEmailField.text
+        
+        newUser["FirstName"] = userFirstNameField.text
+        
+        newUser["LastName"] = userLastNameField.text
+        
+        
+        
         
         newUser.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if success {

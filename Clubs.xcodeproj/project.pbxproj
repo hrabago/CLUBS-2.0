@@ -17,6 +17,7 @@
 		C4209EC11CC9AB3700827822 /* ClubEventsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4209EC01CC9AB3700827822 /* ClubEventsCell.swift */; };
 		C4209EC31CC9AB4F00827822 /* ClubHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4209EC21CC9AB4F00827822 /* ClubHeaderCell.swift */; };
 		C4209EC51CCAADA000827822 /* launchScreen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C4209EC41CCAADA000827822 /* launchScreen.jpg */; };
+		C4209EC71CCBE12100827822 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4209EC61CCBE12100827822 /* NewEventViewController.swift */; };
 		C42226D71C9E4CB800E7C13A /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42226D61C9E4CB800E7C13A /* EventsViewController.swift */; };
 		C42226D91C9E4CDD00E7C13A /* MyClubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42226D81C9E4CDD00E7C13A /* MyClubsViewController.swift */; };
 		C42226DB1C9E5B9600E7C13A /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42226DA1C9E5B9500E7C13A /* EventTableViewCell.swift */; };
@@ -44,6 +45,7 @@
 		C4209EC01CC9AB3700827822 /* ClubEventsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubEventsCell.swift; sourceTree = "<group>"; };
 		C4209EC21CC9AB4F00827822 /* ClubHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubHeaderCell.swift; sourceTree = "<group>"; };
 		C4209EC41CCAADA000827822 /* launchScreen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = launchScreen.jpg; path = Assets.xcassets/launchScreen.jpg; sourceTree = "<group>"; };
+		C4209EC61CCBE12100827822 /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		C42226D61C9E4CB800E7C13A /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		C42226D81C9E4CDD00E7C13A /* MyClubsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyClubsViewController.swift; sourceTree = "<group>"; };
 		C42226DA1C9E5B9500E7C13A /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				C4317C511CBDC4F5003C8DDD /* ProfileViewController.swift */,
 				C41690DF1CC189C7000A8A23 /* DetailedEventViewController.swift */,
 				C4209EBE1CC9A7EF00827822 /* ClubDetailedViewController.swift */,
+				C4209EC61CCBE12100827822 /* NewEventViewController.swift */,
 			);
 			name = "view Controllers";
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				C42226DB1C9E5B9600E7C13A /* EventTableViewCell.swift in Sources */,
 				C4209EBD1CC99D7A00827822 /* ClubTableViewCell.swift in Sources */,
 				C48EA5B51CBB65E4000EB8B3 /* SignUpViewController.swift in Sources */,
+				C4209EC71CCBE12100827822 /* NewEventViewController.swift in Sources */,
 				C4CF65681C8A3865003DAF38 /* ViewController.swift in Sources */,
 				C42226D71C9E4CB800E7C13A /* EventsViewController.swift in Sources */,
 				C4CF65661C8A3865003DAF38 /* AppDelegate.swift in Sources */,
