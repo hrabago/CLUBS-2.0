@@ -15,6 +15,8 @@ class User: NSObject {
     
     
     class func postUserImage(image: UIImage?, withCaption caption: String?, withCompletion completion: PFBooleanResultBlock?) {
+        
+        
         // Create Parse object PFObject
         let user = PFObject(className: "User")
         

@@ -30,6 +30,7 @@
 		C4CF65701C8A3865003DAF38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4CF656E1C8A3865003DAF38 /* LaunchScreen.storyboard */; };
 		C4D599F91CC0676F00D4A565 /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D599F81CC0676F00D4A565 /* ProfileHeaderCell.swift */; };
 		C4D599FB1CC0679100D4A565 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D599FA1CC0679100D4A565 /* ProfileCell.swift */; };
+		C4D7298B1CD048A400E84525 /* hackny.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D7298A1CD048A400E84525 /* hackny.png */; };
 		C4E2B5BA1C9B4118004B996B /* club.png in Resources */ = {isa = PBXBuildFile; fileRef = C4E2B5B91C9B4118004B996B /* club.png */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		C4CF65711C8A3865003DAF38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4D599F81CC0676F00D4A565 /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCell.swift; sourceTree = "<group>"; };
 		C4D599FA1CC0679100D4A565 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		C4D7298A1CD048A400E84525 /* hackny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hackny.png; path = Assets.xcassets/hackny.png; sourceTree = "<group>"; };
 		C4E2B5B91C9B4118004B996B /* club.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = club.png; path = Assets.xcassets/club.png; sourceTree = "<group>"; };
 		E08769BB27ACDCB609BD7905 /* Pods-Clubs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clubs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clubs/Pods-Clubs.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,18 +154,27 @@
 		C4CF65641C8A3865003DAF38 /* Clubs */ = {
 			isa = PBXGroup;
 			children = (
+				C4D729891CD03C6A00E84525 /* ClubLogos */,
 				C41690E11CC1A928000A8A23 /* Models */,
 				C4CF65651C8A3865003DAF38 /* AppDelegate.swift */,
 				C4317C531CBDC534003C8DDD /* Cells */,
 				C42226D51C9E4C8900E7C13A /* view Controllers */,
 				C4CF65691C8A3865003DAF38 /* Main.storyboard */,
 				C4CF656C1C8A3865003DAF38 /* Assets.xcassets */,
+				C4D7298A1CD048A400E84525 /* hackny.png */,
 				C4209EC41CCAADA000827822 /* launchScreen.jpg */,
 				C4E2B5B91C9B4118004B996B /* club.png */,
 				C4CF656E1C8A3865003DAF38 /* LaunchScreen.storyboard */,
 				C4CF65711C8A3865003DAF38 /* Info.plist */,
 			);
 			path = Clubs;
+			sourceTree = "<group>";
+		};
+		C4D729891CD03C6A00E84525 /* ClubLogos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ClubLogos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4CF65701C8A3865003DAF38 /* LaunchScreen.storyboard in Resources */,
+				C4D7298B1CD048A400E84525 /* hackny.png in Resources */,
 				C4E2B5BA1C9B4118004B996B /* club.png in Resources */,
 				C4209EC51CCAADA000827822 /* launchScreen.jpg in Resources */,
 				C4CF656D1C8A3865003DAF38 /* Assets.xcassets in Resources */,

@@ -8,6 +8,10 @@ class MyClubsViewController: UIViewController, UIGestureRecognizerDelegate, UITa
   
     
     var clubEventPosts: [PFObject]!
+    
+    var clubNameArray: [String]!
+    
+    
 
     
     override func viewDidLoad() {
@@ -19,6 +23,8 @@ class MyClubsViewController: UIViewController, UIGestureRecognizerDelegate, UITa
         self.tableView.dataSource = self
         self.tableView.reloadData()
         
+        clubNameArray = ["CSS","Codepath", "Cryptocurrency"]
+        
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
@@ -27,6 +33,23 @@ class MyClubsViewController: UIViewController, UIGestureRecognizerDelegate, UITa
         if let row = tableView.indexPathForSelectedRow {
             self.tableView.deselectRowAtIndexPath(row, animated: false)
         }
+        
+        
+        PFUser.currentUser()!.fetchInBackgroundWithBlock({ (currentUser: PFObject?, error: NSError?) -> Void in
+            
+            // Update your data
+            
+            if let user = currentUser as? PFUser {
+                
+                if user.authenticated{
+                    
+                }
+                
+            }
+        })
+
+        
+        
         
     }
     
@@ -46,6 +69,23 @@ class MyClubsViewController: UIViewController, UIGestureRecognizerDelegate, UITa
         
         let cell = tableView.dequeueReusableCellWithIdentifier("ClubTableViewCell") as! ClubTableViewCell
         //cell.clubEventPost = clubEventPosts[indexPath.row]
+        
+        
+        switch(indexPath.row){
+            
+        case 0:
+            
+            cell.clubNameLabel.text = clubNameArray[indexPath.row]
+            
+        case 1:
+            
+            cell.clubNameLabel.text = clubNameArray[indexPath.row]
+            
+        default:
+            
+            cell.clubNameLabel.text = "Other Club"
+            
+        }
         
         
         return cell
