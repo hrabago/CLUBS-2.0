@@ -15,7 +15,7 @@ class ClubTableViewCell: UITableViewCell {
     @IBOutlet weak var clubNameLabel: UILabel!
     @IBOutlet weak var clubImageView: UIImageView!
     @IBOutlet weak var clubDescriptionLabel: UILabel!
-    
+    @IBOutlet weak var clubLocationLabel: UILabel!
     
     
     var clubEventPost: PFObject!
