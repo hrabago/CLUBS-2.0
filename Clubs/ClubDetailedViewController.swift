@@ -16,6 +16,11 @@ class ClubDetailedViewController: UIViewController,UITableViewDataSource,UITable
     
     @IBOutlet weak var tableView: UITableView!
     
+    var clubName: String!
+    var clubLocation: String!
+    var clubDescription: String!
+    var clubImageView: UIImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,11 +28,14 @@ class ClubDetailedViewController: UIViewController,UITableViewDataSource,UITable
         tableView.delegate = self
         tableView.reloadData()
         
+        
+        
         //tableView.sectionFooterHeight = 0.0
         // Do any additional setup after loading the view.
         
-        //tableView.rowHeight = UITableViewAutomaticDimension
-        //tableView.estimatedRowHeight = 120
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedSectionHeaderHeight = 500
+        tableView.estimatedRowHeight = 200
         
     }
     
@@ -65,14 +73,18 @@ class ClubDetailedViewController: UIViewController,UITableViewDataSource,UITable
         
         let header = tableView.dequeueReusableCellWithIdentifier("ClubHeaderCell") as! ClubHeaderCell
         
-        header.clubNameLabel.text = "Computer Science Society (CSS)"
+        header.clubNameLabel.text = clubName
+        header.clubLocationLabel.text = clubLocation
+        header.clubDescriptionLabel.text = clubDescription
+        header.detailClubImage.image = clubImageView
+        
+        
+        
+        print(clubLocation)
         
         return header.contentView
     }
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat{
-        
-        return 200.0
-    }
+
     //FOOTER
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat{
         
@@ -86,6 +98,8 @@ class ClubDetailedViewController: UIViewController,UITableViewDataSource,UITable
         
         
         let cell = tableView.dequeueReusableCellWithIdentifier("ClubEventsCell", forIndexPath: indexPath) as! ClubEventsCell
+        
+        
         
         
         return cell

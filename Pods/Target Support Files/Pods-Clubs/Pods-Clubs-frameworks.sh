@@ -88,6 +88,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Clubs/BDBOAuth1Manager.framework"
   install_framework "Pods-Clubs/Bolts.framework"
   install_framework "Pods-Clubs/MBProgressHUD.framework"
+  install_framework "Pods-Clubs/NVActivityIndicatorView.framework"
   install_framework "Pods-Clubs/Parse.framework"
   install_framework "Pods-Clubs/ParseUI.framework"
 fi
@@ -96,6 +97,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Clubs/BDBOAuth1Manager.framework"
   install_framework "Pods-Clubs/Bolts.framework"
   install_framework "Pods-Clubs/MBProgressHUD.framework"
+  install_framework "Pods-Clubs/NVActivityIndicatorView.framework"
   install_framework "Pods-Clubs/Parse.framework"
   install_framework "Pods-Clubs/ParseUI.framework"
 fi

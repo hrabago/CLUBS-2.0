@@ -11,6 +11,8 @@ import MapKit
 import CoreLocation
 import Parse
 import ParseUI
+import NVActivityIndicatorView
+
 
 class EventsViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UIGestureRecognizerDelegate, UITableViewDelegate, UITableViewDataSource{
     
@@ -26,11 +28,33 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
 
     var locationManager: CLLocationManager!
     
+    var loadingView: NVActivityIndicatorView!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.tableView.alpha = 0.0
+        print("Viewdidload")
+        let viewW = self.view.frame.width/4
+        let viewH = self.view.frame.height/4
+        let xV = self.view.frame.width/2 - viewW/2
+        let yV = viewH/2
+        
+        let frame = CGRect(x: xV, y: yV, width: viewW, height: viewH)
+        
+        loadingView = NVActivityIndicatorView(frame: frame)
 
+        
+        loadingView.type = .BallPulseSync //.BallScaleRippleMultiple
+        
+        loadingView.color = UIColor(red:92/255, green: 55/255, blue: 153/255, alpha: 1.0)
+        
+        loadingView.padding = 20
+        
+        loadingView.startAnimation()
+        self.view.addSubview(loadingView)
         
         //let centerLocation = CLLocation(latitude: 37.7833, longitude: -122.4167)
         //goToLocation(centerLocation)
@@ -81,6 +105,33 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             self.tableView.deselectRowAtIndexPath(row, animated: false)
         }
         
+        
+        self.getClubEventsFromParse()
+
+    }
+    func getClubEventsFromParse() {
+        
+        print("Retrieving Instagram Posts from Parse...")
+        
+        let query = PFQuery(className: "Event")
+        query.orderByDescending("createdAt")
+        query.includeKey("event")
+        query.findObjectsInBackgroundWithBlock { (results: [PFObject]?, error: NSError?) -> Void in
+            if let error = error {
+                print("Error: \(error)")
+            } else {
+                if let results = results {
+                    print("Successfully retrieved \(results.count) posts")
+                    
+                    self.clubEventPosts = results
+                    self.tableView.reloadData()
+                    self.stopLoading()
+
+                } else {
+                    print("No results returned")
+                }
+            }
+        }
     }
     /*
     func goToLocation(location: CLLocation) {
@@ -125,14 +176,15 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
-        //return self.clubEventPosts == nil ? 0 : self.clubEventPosts.count
-        return 20
+        return self.clubEventPosts == nil ? 0 : self.clubEventPosts.count
+        //return 20
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
         let cell = tableView.dequeueReusableCellWithIdentifier("EventCell") as! EventTableViewCell
-        //cell.clubEventPost = clubEventPosts[indexPath.row]
+        
+        cell.clubEventPost = clubEventPosts[indexPath.row]
         
         
         return cell
@@ -182,6 +234,19 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         renderer.lineWidth = 1.0
         return renderer
     }
+    
+    func stopLoading(){
+        UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+            self.loadingView.alpha = 0.0
+            }, completion: {
+                (finished: Bool) -> Void in
+                
+                UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                    self.tableView.alpha = 1.0
+                    }, completion: nil)
+        })
+    }
+
     /*
     // MARK: - Navigation
 

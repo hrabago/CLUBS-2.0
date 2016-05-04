@@ -10,6 +10,7 @@ target 'Clubs' do
 	pod "BDBOAuth1Manager"
     pod 'MBProgressHUD'
     pod 'ParseUI'
+    pod 'NVActivityIndicatorView'
 
 end
 

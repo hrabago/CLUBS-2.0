@@ -8,7 +8,7 @@
 
 import UIKit
 import Parse
-
+import ParseUI
 
 let userDidLogoutNotification = "userDidLogoutNotification"
 

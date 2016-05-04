@@ -22,6 +22,10 @@
 		C42226D91C9E4CDD00E7C13A /* MyClubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42226D81C9E4CDD00E7C13A /* MyClubsViewController.swift */; };
 		C42226DB1C9E5B9600E7C13A /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42226DA1C9E5B9500E7C13A /* EventTableViewCell.swift */; };
 		C4317C521CBDC4F5003C8DDD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4317C511CBDC4F5003C8DDD /* ProfileViewController.swift */; };
+		C46020C51CD2D2B2009766B1 /* Pods in Resources */ = {isa = PBXBuildFile; fileRef = C46020C41CD2D2B2009766B1 /* Pods */; };
+		C46020C91CD2DAF4009766B1 /* Logos in Resources */ = {isa = PBXBuildFile; fileRef = C46020C81CD2DAF4009766B1 /* Logos */; };
+		C46020CB1CD318A9009766B1 /* UniversitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46020CA1CD318A9009766B1 /* UniversitiesViewController.swift */; };
+		C46020CD1CD3198B009766B1 /* UniversityNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46020CC1CD3198B009766B1 /* UniversityNameTableViewCell.swift */; };
 		C48EA5B51CBB65E4000EB8B3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48EA5B41CBB65E4000EB8B3 /* SignUpViewController.swift */; };
 		C4CF65661C8A3865003DAF38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CF65651C8A3865003DAF38 /* AppDelegate.swift */; };
 		C4CF65681C8A3865003DAF38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CF65671C8A3865003DAF38 /* ViewController.swift */; };
@@ -51,6 +55,10 @@
 		C42226D81C9E4CDD00E7C13A /* MyClubsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyClubsViewController.swift; sourceTree = "<group>"; };
 		C42226DA1C9E5B9500E7C13A /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		C4317C511CBDC4F5003C8DDD /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C46020C41CD2D2B2009766B1 /* Pods */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pods; sourceTree = SOURCE_ROOT; };
+		C46020C81CD2DAF4009766B1 /* Logos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Logos; sourceTree = "<group>"; };
+		C46020CA1CD318A9009766B1 /* UniversitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesViewController.swift; sourceTree = "<group>"; };
+		C46020CC1CD3198B009766B1 /* UniversityNameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityNameTableViewCell.swift; sourceTree = "<group>"; };
 		C48EA5B41CBB65E4000EB8B3 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C4CF65621C8A3865003DAF38 /* Clubs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clubs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CF65651C8A3865003DAF38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +124,7 @@
 				C41690DF1CC189C7000A8A23 /* DetailedEventViewController.swift */,
 				C4209EBE1CC9A7EF00827822 /* ClubDetailedViewController.swift */,
 				C4209EC61CCBE12100827822 /* NewEventViewController.swift */,
+				C46020CA1CD318A9009766B1 /* UniversitiesViewController.swift */,
 			);
 			name = "view Controllers";
 			sourceTree = "<group>";
@@ -129,6 +138,7 @@
 				C4209EC01CC9AB3700827822 /* ClubEventsCell.swift */,
 				C4D599FA1CC0679100D4A565 /* ProfileCell.swift */,
 				C4209EC21CC9AB4F00827822 /* ClubHeaderCell.swift */,
+				C46020CC1CD3198B009766B1 /* UniversityNameTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -161,6 +171,8 @@
 				C42226D51C9E4C8900E7C13A /* view Controllers */,
 				C4CF65691C8A3865003DAF38 /* Main.storyboard */,
 				C4CF656C1C8A3865003DAF38 /* Assets.xcassets */,
+				C46020C81CD2DAF4009766B1 /* Logos */,
+				C46020C41CD2D2B2009766B1 /* Pods */,
 				C4D7298A1CD048A400E84525 /* hackny.png */,
 				C4209EC41CCAADA000827822 /* launchScreen.jpg */,
 				C4E2B5B91C9B4118004B996B /* club.png */,
@@ -238,7 +250,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C46020C91CD2DAF4009766B1 /* Logos in Resources */,
 				C4CF65701C8A3865003DAF38 /* LaunchScreen.storyboard in Resources */,
+				C46020C51CD2D2B2009766B1 /* Pods in Resources */,
 				C4D7298B1CD048A400E84525 /* hackny.png in Resources */,
 				C4E2B5BA1C9B4118004B996B /* club.png in Resources */,
 				C4209EC51CCAADA000827822 /* launchScreen.jpg in Resources */,
@@ -311,6 +325,7 @@
 				C42226D71C9E4CB800E7C13A /* EventsViewController.swift in Sources */,
 				C4CF65661C8A3865003DAF38 /* AppDelegate.swift in Sources */,
 				C40479631C9B93CB006393DF /* LogInViewController.swift in Sources */,
+				C46020CB1CD318A9009766B1 /* UniversitiesViewController.swift in Sources */,
 				C4D599F91CC0676F00D4A565 /* ProfileHeaderCell.swift in Sources */,
 				C41690E01CC189C7000A8A23 /* DetailedEventViewController.swift in Sources */,
 				C4209EC11CC9AB3700827822 /* ClubEventsCell.swift in Sources */,
@@ -319,6 +334,7 @@
 				C4317C521CBDC4F5003C8DDD /* ProfileViewController.swift in Sources */,
 				C42226D91C9E4CDD00E7C13A /* MyClubsViewController.swift in Sources */,
 				C4D599FB1CC0679100D4A565 /* ProfileCell.swift in Sources */,
+				C46020CD1CD3198B009766B1 /* UniversityNameTableViewCell.swift in Sources */,
 				C41690E51CC1AF71000A8A23 /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

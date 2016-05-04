@@ -11,7 +11,10 @@ import UIKit
 class ClubHeaderCell: UITableViewCell {
     
     @IBOutlet weak var clubNameLabel: UILabel!
+    @IBOutlet weak var clubLocationLabel: UILabel!
+    @IBOutlet weak var clubDescriptionLabel: UILabel!
     
+    @IBOutlet weak var detailClubImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

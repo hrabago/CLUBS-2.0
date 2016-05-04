@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import ParseUI
 
 
 class EventTableViewCell: UITableViewCell {
@@ -17,7 +18,43 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var eventImage: UIImageView!
 
-    var clubEventPost: PFObject!
+    @IBOutlet weak var eventCover: PFImageView!
+    
+    var months = ["JANUARY","FEBRUARY", "MARCH","APRIL",
+                  "MAY","JUNE","JULY", "AUGUST",
+                  "SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"]
+    
+    var clubEventPost: PFObject! {
+        
+        
+        didSet {
+            
+            self.eventTitle.text = clubEventPost["eventTitle"] as? String
+            
+            let photo = clubEventPost["event"] as! PFObject
+            
+            print(clubEventPost["author"] as? String)
+
+            self.eventHostClub.text = clubEventPost["author"] as? String
+            
+            
+            self.eventDate.text = clubEventPost["date"] as? String
+            let str = clubEventPost["date"] as? String
+            
+            let month = str!.substringToIndex( str!.rangeOfString("/", options: .LiteralSearch, range: nil, locale: nil)?.startIndex ?? str!.startIndex )
+
+            let day = str!.substringToIndex( str!.rangeOfString("/16", options: .LiteralSearch, range: nil, locale: nil)?.startIndex ?? str!.startIndex )
+            
+            
+            str!.substringWithRange(Range<String.Index>(start: str!.startIndex.advancedBy(2), end: str!.endIndex.advancedBy(-1))) //"llo, playgroun"
+
+            self.eventCover.file = photo["image"] as? PFFile
+            
+            self.eventCover.loadInBackground()
+            
+            
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
