@@ -17,10 +17,13 @@ class NewEventViewController: UIViewController,UINavigationControllerDelegate,UI
    
     @IBOutlet weak var libImageView: UIImageView!
     @IBOutlet weak var datePicker: UIDatePicker!
+    
     @IBOutlet weak var eventTitleLabel: UITextField!
     @IBOutlet weak var descriptionLabel: UITextField!
-    
     @IBOutlet weak var eventLocation: UITextField!
+    
+    
+    
     let imagePicker = UIImagePickerController()
     
     var draftImage: UIImage!

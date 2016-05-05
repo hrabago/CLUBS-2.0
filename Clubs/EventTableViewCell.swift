@@ -19,10 +19,13 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var eventImage: UIImageView!
 
     @IBOutlet weak var eventCover: PFImageView!
+    @IBOutlet weak var eventDayLabel: UILabel!
+    @IBOutlet weak var eventMonthLabel: UILabel!
     
     var months = ["JANUARY","FEBRUARY", "MARCH","APRIL",
                   "MAY","JUNE","JULY", "AUGUST",
                   "SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"]
+    
     
     var clubEventPost: PFObject! {
         
@@ -39,21 +42,44 @@ class EventTableViewCell: UITableViewCell {
             
             
             self.eventDate.text = clubEventPost["date"] as? String
+            
             let str = clubEventPost["date"] as? String
             
-            let month = str!.substringToIndex( str!.rangeOfString("/", options: .LiteralSearch, range: nil, locale: nil)?.startIndex ?? str!.startIndex )
-
-            let day = str!.substringToIndex( str!.rangeOfString("/16", options: .LiteralSearch, range: nil, locale: nil)?.startIndex ?? str!.startIndex )
             
+            self.eventDayLabel.text = "\(dayNumFromDateStr(str!))"
             
-            str!.substringWithRange(Range<String.Index>(start: str!.startIndex.advancedBy(2), end: str!.endIndex.advancedBy(-1))) //"llo, playgroun"
-
+            self.eventMonthLabel.text = monthNamefromDateStr(str!)
+            
             self.eventCover.file = photo["image"] as? PFFile
             
             self.eventCover.loadInBackground()
             
             
         }
+    }
+    
+    func monthNamefromDateStr(str: String) -> String{
+        
+        let month = str.substringToIndex( str.rangeOfString("/", options: .LiteralSearch, range: nil, locale: nil)?.startIndex ?? str.startIndex )
+        
+        let monthNum = Int(month)!
+
+        
+        return months[monthNum-1]
+        
+        
+    }
+    
+    func dayNumFromDateStr(str: String) -> Int{
+        
+        let month = str.substringToIndex( str.rangeOfString("/", options: .LiteralSearch, range: nil, locale: nil)?.startIndex ?? str.startIndex )
+        
+        let day = str.substringWithRange(Range<String.Index>(start: str.startIndex.advancedBy(month.characters.count + 1), end: str.startIndex.advancedBy(month.characters.count + 3)))
+        
+        let dayNum = Int(day)!
+        
+        return dayNum
+        
     }
     
     override func awakeFromNib() {
