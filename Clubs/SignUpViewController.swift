@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import NVActivityIndicatorView
 
 class SignUpViewController: UIViewController {
 
@@ -18,7 +19,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var userLastNameField: UITextField!
     
     
-    
+    var loadingView: NVActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,8 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func onSignUp(sender: AnyObject) {
+        
+        self.startLoading()
         
         let newUser = PFUser()
         
@@ -58,10 +61,12 @@ class SignUpViewController: UIViewController {
                     if user != nil{
                         
                         print("Login Worked!")
+                        self.stopLoading()
                         
                         self.performSegueWithIdentifier("signUpSuccessful", sender: nil)
                     }
                     else{
+                        self.stopLoading()
                         print("Login Failed")
                         
                     }
@@ -74,11 +79,50 @@ class SignUpViewController: UIViewController {
                 
                 if error?.code == 202{
                     
-                    print("Username Takem!")
+                    print("Username Taken!")
+                    
+                    self.stopLoading()
                 }
                 
             }
         }
+    }
+    
+    func startLoading(){
+        
+        print("Viewdidload")
+        let viewW = self.view.frame.width/4
+        let viewH = self.view.frame.height/4
+        let xV = self.view.frame.width/2 - viewW/2
+        let yV = viewH/2
+        
+        let frame = CGRect(x: xV, y: yV, width: viewW, height: viewH)
+        
+        loadingView = NVActivityIndicatorView(frame: frame)
+        
+        
+        loadingView.type = .BallScaleRippleMultiple //.BallScaleRippleMultiple
+        
+        loadingView.color = UIColor(red:92/255, green: 55/255, blue: 153/255, alpha: 1.0)
+        
+        loadingView.padding = 20
+        
+        loadingView.startAnimation()
+        self.view.addSubview(loadingView)
+    }
+    
+    func stopLoading(){
+        UIView.animateWithDuration(0.5, delay: 0.0, options:
+            
+            UIViewAnimationOptions.CurveEaseOut, animations: {
+                self.loadingView.alpha = 0.0
+            }, completion: {
+                (finished: Bool) -> Void in
+                
+                UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                    
+                    }, completion: nil)
+        })
     }
 
     /*

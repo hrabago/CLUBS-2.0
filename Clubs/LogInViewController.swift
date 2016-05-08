@@ -9,6 +9,7 @@
 import UIKit
 import JavaScriptCore
 import Parse
+import NVActivityIndicatorView
 
 
 class LogInViewController: UIViewController {
@@ -18,6 +19,7 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var pwField: UITextField!
     @IBOutlet weak var buttonBottomConstraint: NSLayoutConstraint!
     
+    var loadingView: NVActivityIndicatorView!
 
 
     override func viewDidLoad() {
@@ -75,12 +77,14 @@ class LogInViewController: UIViewController {
     
     @IBAction func pressedLogIn(sender: AnyObject) {
     
+        startLoading()
         
         PFUser.logInWithUsernameInBackground(userField.text!, password: pwField.text!) { (user: PFUser?, error: NSError?) -> Void in
             
             if user != nil{
                 
                 print("Login Worked!")
+                self.stopLoading()
                 
                 self.performSegueWithIdentifier("loginSuccessful", sender: nil)
             }
@@ -102,6 +106,43 @@ class LogInViewController: UIViewController {
             }
         }
     }
+    func startLoading(){
+        
+        print("Viewdidload")
+        let viewW = self.view.frame.width/4
+        let viewH = self.view.frame.height/4
+        let xV = self.view.frame.width/2 - viewW/2
+        let yV = viewH/2
+        
+        let frame = CGRect(x: xV, y: yV, width: viewW, height: viewH)
+        
+        loadingView = NVActivityIndicatorView(frame: frame)
+        
+        
+        loadingView.type = .BallScaleRippleMultiple //.BallScaleRippleMultiple
+        
+        loadingView.color = UIColor(red:92/255, green: 55/255, blue: 153/255, alpha: 1.0)
+        
+        loadingView.padding = 20
+        
+        loadingView.startAnimation()
+        self.view.addSubview(loadingView)
+    }
+    
+    func stopLoading(){
+        UIView.animateWithDuration(0.5, delay: 0.0, options:
+            
+            UIViewAnimationOptions.CurveEaseOut, animations: {
+                self.loadingView.alpha = 0.0
+            }, completion: {
+                (finished: Bool) -> Void in
+                
+                UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                    
+                    }, completion: nil)
+        })
+    }
+
     
     /*
     // MARK: - Navigation

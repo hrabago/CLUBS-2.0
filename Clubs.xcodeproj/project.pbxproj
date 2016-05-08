@@ -35,6 +35,11 @@
 		C4D599F91CC0676F00D4A565 /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D599F81CC0676F00D4A565 /* ProfileHeaderCell.swift */; };
 		C4D599FB1CC0679100D4A565 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D599FA1CC0679100D4A565 /* ProfileCell.swift */; };
 		C4D7298B1CD048A400E84525 /* hackny.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D7298A1CD048A400E84525 /* hackny.png */; };
+		C4DF2B9B1CDE646100C55025 /* 1462661824_checkmark-24.png in Resources */ = {isa = PBXBuildFile; fileRef = C4DF2B981CDE646100C55025 /* 1462661824_checkmark-24.png */; };
+		C4DF2B9C1CDE646100C55025 /* 1462661830_x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4DF2B991CDE646100C55025 /* 1462661830_x.png */; };
+		C4DF2B9D1CDE646100C55025 /* 1462661832_164_QuestionMark.png in Resources */ = {isa = PBXBuildFile; fileRef = C4DF2B9A1CDE646100C55025 /* 1462661832_164_QuestionMark.png */; };
+		C4DF2B9F1CDF0F3D00C55025 /* DetailedEventHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF2B9E1CDF0F3D00C55025 /* DetailedEventHeaderCell.swift */; };
+		C4DF2BA11CDF0F5800C55025 /* DetailedEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF2BA01CDF0F5800C55025 /* DetailedEventCell.swift */; };
 		C4E2B5BA1C9B4118004B996B /* club.png in Resources */ = {isa = PBXBuildFile; fileRef = C4E2B5B91C9B4118004B996B /* club.png */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +75,11 @@
 		C4D599F81CC0676F00D4A565 /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCell.swift; sourceTree = "<group>"; };
 		C4D599FA1CC0679100D4A565 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		C4D7298A1CD048A400E84525 /* hackny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hackny.png; path = Assets.xcassets/hackny.png; sourceTree = "<group>"; };
+		C4DF2B981CDE646100C55025 /* 1462661824_checkmark-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1462661824_checkmark-24.png"; sourceTree = "<group>"; };
+		C4DF2B991CDE646100C55025 /* 1462661830_x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1462661830_x.png; sourceTree = "<group>"; };
+		C4DF2B9A1CDE646100C55025 /* 1462661832_164_QuestionMark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1462661832_164_QuestionMark.png; sourceTree = "<group>"; };
+		C4DF2B9E1CDF0F3D00C55025 /* DetailedEventHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedEventHeaderCell.swift; sourceTree = "<group>"; };
+		C4DF2BA01CDF0F5800C55025 /* DetailedEventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedEventCell.swift; sourceTree = "<group>"; };
 		C4E2B5B91C9B4118004B996B /* club.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = club.png; path = Assets.xcassets/club.png; sourceTree = "<group>"; };
 		E08769BB27ACDCB609BD7905 /* Pods-Clubs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clubs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clubs/Pods-Clubs.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,6 +149,8 @@
 				C4D599FA1CC0679100D4A565 /* ProfileCell.swift */,
 				C4209EC21CC9AB4F00827822 /* ClubHeaderCell.swift */,
 				C46020CC1CD3198B009766B1 /* UniversityNameTableViewCell.swift */,
+				C4DF2B9E1CDF0F3D00C55025 /* DetailedEventHeaderCell.swift */,
+				C4DF2BA01CDF0F5800C55025 /* DetailedEventCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -174,6 +186,9 @@
 				C46020C81CD2DAF4009766B1 /* Logos */,
 				C46020C41CD2D2B2009766B1 /* Pods */,
 				C4D7298A1CD048A400E84525 /* hackny.png */,
+				C4DF2B981CDE646100C55025 /* 1462661824_checkmark-24.png */,
+				C4DF2B991CDE646100C55025 /* 1462661830_x.png */,
+				C4DF2B9A1CDE646100C55025 /* 1462661832_164_QuestionMark.png */,
 				C4209EC41CCAADA000827822 /* launchScreen.jpg */,
 				C4E2B5B91C9B4118004B996B /* club.png */,
 				C4CF656E1C8A3865003DAF38 /* LaunchScreen.storyboard */,
@@ -251,13 +266,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C46020C91CD2DAF4009766B1 /* Logos in Resources */,
+				C4DF2B9B1CDE646100C55025 /* 1462661824_checkmark-24.png in Resources */,
 				C4CF65701C8A3865003DAF38 /* LaunchScreen.storyboard in Resources */,
 				C46020C51CD2D2B2009766B1 /* Pods in Resources */,
+				C4DF2B9D1CDE646100C55025 /* 1462661832_164_QuestionMark.png in Resources */,
 				C4D7298B1CD048A400E84525 /* hackny.png in Resources */,
 				C4E2B5BA1C9B4118004B996B /* club.png in Resources */,
 				C4209EC51CCAADA000827822 /* launchScreen.jpg in Resources */,
 				C4CF656D1C8A3865003DAF38 /* Assets.xcassets in Resources */,
 				C4CF656B1C8A3865003DAF38 /* Main.storyboard in Resources */,
+				C4DF2B9C1CDE646100C55025 /* 1462661830_x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +336,7 @@
 			files = (
 				C4209EBF1CC9A7EF00827822 /* ClubDetailedViewController.swift in Sources */,
 				C42226DB1C9E5B9600E7C13A /* EventTableViewCell.swift in Sources */,
+				C4DF2BA11CDF0F5800C55025 /* DetailedEventCell.swift in Sources */,
 				C4209EBD1CC99D7A00827822 /* ClubTableViewCell.swift in Sources */,
 				C48EA5B51CBB65E4000EB8B3 /* SignUpViewController.swift in Sources */,
 				C4209EC71CCBE12100827822 /* NewEventViewController.swift in Sources */,
@@ -336,6 +355,7 @@
 				C4D599FB1CC0679100D4A565 /* ProfileCell.swift in Sources */,
 				C46020CD1CD3198B009766B1 /* UniversityNameTableViewCell.swift in Sources */,
 				C41690E51CC1AF71000A8A23 /* Event.swift in Sources */,
+				C4DF2B9F1CDF0F3D00C55025 /* DetailedEventHeaderCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

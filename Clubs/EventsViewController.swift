@@ -236,12 +236,14 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     
     func stopLoading(){
-        UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+        UIView.animateWithDuration(0.5, delay: 0.0, options:
+            
+            UIViewAnimationOptions.CurveEaseOut, animations: {
             self.loadingView.alpha = 0.0
             }, completion: {
                 (finished: Bool) -> Void in
                 
-                UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
                     self.tableView.alpha = 1.0
                     }, completion: nil)
         })

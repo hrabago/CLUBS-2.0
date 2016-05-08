@@ -31,6 +31,9 @@ class NewEventViewController: UIViewController,UINavigationControllerDelegate,UI
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.hideKeyboardWhenTappedAround()
+
 
         // Do any additional setup after loading the view.
         imagePicker.delegate = self
@@ -72,7 +75,8 @@ class NewEventViewController: UIViewController,UINavigationControllerDelegate,UI
         
         self.draftImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         
-        self.libImageView.image = self.draftImage
+        self.libImageView.image = draftImage
+        
         
         self.libImageView.alpha = 1
         self.libImageView.backgroundColor = UIColor.whiteColor()

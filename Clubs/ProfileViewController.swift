@@ -9,15 +9,22 @@
 import UIKit
 import Parse
 import ParseUI
+import NVActivityIndicatorView
 
 class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
     
+    var loadingView: NVActivityIndicatorView!
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
+        self.startLoading()
 
         tableView.dataSource = self
         tableView.delegate = self
@@ -90,6 +97,8 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
                 
                 print("header label \(fullName)")
                 
+                self.stopLoading()
+                
             }
         })
         
@@ -124,6 +133,8 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     @IBAction func onLogOut(sender: AnyObject) {
         
+        self.startLoading()
+        
         PFUser.logOutInBackgroundWithBlock { (error: NSError?) -> Void in
             if let error = error {
                 print("Error while trying to logout: \(error)")
@@ -132,10 +143,48 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
                 print("Log out Worked")
                 NSNotificationCenter.defaultCenter().postNotificationName(userDidLogoutNotification, object: nil)
                 //self.performSegueWithIdentifier("onLogoutSegue", sender: nil)
-                
+                self.stopLoading()
                 
             }
         }
+    }
+    
+    func startLoading(){
+        
+        self.tableView.alpha = 0.0
+        print("Viewdidload")
+        let viewW = self.view.frame.width/4
+        let viewH = self.view.frame.height/4
+        let xV = self.view.frame.width/2 - viewW/2
+        let yV = viewH/2
+        
+        let frame = CGRect(x: xV, y: yV, width: viewW, height: viewH)
+        
+        loadingView = NVActivityIndicatorView(frame: frame)
+        
+        
+        loadingView.type = .BallClipRotate //.BallScaleRippleMultiple
+        
+        loadingView.color = UIColor(red:92/255, green: 55/255, blue: 153/255, alpha: 1.0)
+        
+        loadingView.padding = 20
+        
+        loadingView.startAnimation()
+        self.view.addSubview(loadingView)
+    }
+    
+    func stopLoading(){
+        UIView.animateWithDuration(0.5, delay: 0.0, options:
+            
+            UIViewAnimationOptions.CurveEaseOut, animations: {
+                self.loadingView.alpha = 0.0
+            }, completion: {
+                (finished: Bool) -> Void in
+                
+                UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                    self.tableView.alpha = 1.0
+                    }, completion: nil)
+        })
     }
 }
     
